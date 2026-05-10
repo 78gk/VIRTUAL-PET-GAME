@@ -47,8 +47,10 @@ npm install
 2. Create `.env` in the project root:
 
 ```env
-DATABASE_URL="file:../db/custom.db"
+DATABASE_URL="file:./db/custom.db"
 ```
+
+If your Prisma setup resolves paths differently in your environment, adjust the relative path accordingly.
 
 3. Generate Prisma client and sync schema:
 
@@ -74,10 +76,10 @@ npm run dev        # start dev server on port 3000
 npm run lint       # run Next.js lint
 npm run build      # production build
 npm run start      # run production server
-npm run db:generate
-npm run db:push
-npm run db:migrate
-npm run db:reset
+npm run db:generate # generate Prisma client
+npm run db:push     # sync schema to database (no migration files)
+npm run db:migrate  # create/apply development migration
+npm run db:reset    # reset database and reapply migrations
 ```
 
 ## API overview
