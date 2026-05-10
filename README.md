@@ -85,6 +85,8 @@ npm run db:reset    # reset database and reapply migrations
 
 ## API overview
 
+> **Note:** `GET /api/pets` will auto-create a fallback user (`default-user@example.com`) when `ownerId` is omitted.
+
 - `POST /api/pets` – create pet
 - `GET /api/pets` – list pets (auto-creates/uses `default-user@example.com` when `ownerId` is not provided)
 - `GET /api/pets/:id` – get pet with recent conversations and achievements
@@ -98,4 +100,3 @@ npm run db:reset    # reset database and reapply migrations
 ## Notes
 
 - Pet stats decay over time while playing.
-- Current app metadata in `src/app/layout.tsx` is still scaffold-branded and can be updated separately.
