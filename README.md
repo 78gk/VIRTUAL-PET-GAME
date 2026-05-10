@@ -50,6 +50,7 @@ npm install
 DATABASE_URL="file:./db/custom.db"
 ```
 
+`db/custom.db` is the database file currently included in this repository.  
 If your Prisma setup resolves paths differently in your environment, adjust the relative path accordingly.
 
 3. Generate Prisma client and sync schema:
@@ -85,7 +86,7 @@ npm run db:reset    # reset database and reapply migrations
 ## API overview
 
 - `POST /api/pets` – create pet
-- `GET /api/pets` – list pets (defaults to generated default user)
+- `GET /api/pets` – list pets (auto-creates/uses `default-user@example.com` when `ownerId` is not provided)
 - `GET /api/pets/:id` – get pet with recent conversations and achievements
 - `PUT /api/pets/:id` – update pet stats/mood/progression
 - `POST /api/achievements` – initialize default achievements
